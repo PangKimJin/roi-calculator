@@ -14,6 +14,8 @@ function App() {
   const [ onboarding, setOnboarding ] = useState(17);
   const [ roleFilling, setRoleFilling ] = useState(30);
   const [ hiringManagers, setHiringManagers ] = useState(20);
+
+  {/* integer values of each field */}
   var hiresValue = parseInt(hires.valueOf());
   var postingValue = parseInt(posting.valueOf());
   var schedulingValue = parseInt(scheduling.valueOf());
@@ -21,6 +23,8 @@ function App() {
   var onboardingValue = parseInt(onboarding.valueOf());
   var roleFillingValue = parseInt(roleFilling.valueOf());
   var hiringManagersValue = parseInt(hiringManagers.valueOf());
+
+  {/* calculations for ROI */}
   var annualSavings = hiresValue * (postingValue + schedulingValue + onboardingValue) * hiringManagersValue / 2;
   var noShowRate = noShowValue / 2;
   var avgOpenRoleDays = roleFillingValue * 0.3;
@@ -29,7 +33,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Row>
-        <Column>
+          {/* displaying ROI */}
+          <Column>
             <p>
               Annual Savings of: ${annualSavings} 
               <br></br>
@@ -39,6 +44,7 @@ function App() {
             </p>
           </Column>
 
+          {/* sliders */}
           <Column>
             <span>
               New Hires per Year: {hires} hires
